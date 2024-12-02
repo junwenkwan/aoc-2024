@@ -1,7 +1,7 @@
 from collections import Counter
 
 # part 1
-with open("./data/input.txt", "r") as f:
+with open("./input.txt", "r") as f:
     lines = f.readlines()
     
 left_arr = []
