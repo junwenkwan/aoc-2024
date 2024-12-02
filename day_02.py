@@ -35,6 +35,7 @@ for report in input_arr:
 
 print(safe_sum)
 
+# part 2
 for i in range(len(report_status)):
     if not report_status[i]:
         # check unsafe report here
@@ -45,7 +46,7 @@ for i in range(len(report_status)):
             temp_arr.pop(x)
             trend = temp_arr[1] - temp_arr[0]
             
-            run_arr = []
+            safe_flag_arr = []
 
             for y in range(len(temp_arr)-1):
                 pointer_1 = temp_arr[y]
@@ -59,9 +60,9 @@ for i in range(len(report_status)):
                     safe_flag = True
                 else:
                     safe_flag = False
-                run_arr.append(safe_flag)
+                safe_flag_arr.append(safe_flag)
         
-            if all(run_arr):
+            if all(safe_flag_arr):
                 new_safe_flag = True
             
             temp_arr = values.copy()
