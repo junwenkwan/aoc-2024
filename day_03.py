@@ -10,7 +10,7 @@ def solve_p1(line):
         second_num_index = 0
         second_num_first_seen = True
 
-        if line[i] == "m" and line[i+1] == "u" and line[i+2] == "l" and line[i+3] == "(":    
+        if line[i:i+4] == "mul(":
             # find first number
             lower_bound = i
             for j in range(i+4, len(line)):
@@ -67,7 +67,7 @@ def solve_p2(line):
             continue
         
         if enable:
-            if line[i] == "m" and line[i+1] == "u" and line[i+2] == "l" and line[i+3] == "(":    
+            if line[i:i+4] == "mul(":
                 # find first number
                 lower_bound = i
                 for j in range(i+4, len(line)):
@@ -108,12 +108,12 @@ def solve_p2(line):
     return mul_sum     
 
 def main():
-    # part 1
     with open("./input.txt", "r") as f:
         lines = f.readlines()
 
     aoc_input = "".join([line for line in lines])
 
+    # part 1
     val = solve_p1(aoc_input)
     print(val)
 
