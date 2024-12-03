@@ -1,5 +1,4 @@
 import string
-import re
 
 def solve_p1(line):
     mul_sum = 0
@@ -113,14 +112,12 @@ def main():
     with open("./input.txt", "r") as f:
         lines = f.readlines()
 
-    final_sum = 0        
-    for line in lines:
-        val = solve_p1(line)
-        final_sum += val
-    print(final_sum)
+    aoc_input = "".join([line for line in lines])
+
+    val = solve_p1(aoc_input)
+    print(val)
 
     # part 2
-    aoc_input = "".join([line for line in lines])
     val = solve_p2(aoc_input)
     print(val)
 
