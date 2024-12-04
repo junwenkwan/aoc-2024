@@ -7,21 +7,8 @@ def main():
     for line in lines:
         MATRIX.append(line.rstrip())
 
-    # MATRIX = ["MMMSXXMASM",
-    #           "MSAMXMSMSA",
-    #           "AMXSXMAAMM",
-    #           "MSAMASMSMX",
-    #           "XMASAMXAMM",
-    #           "XXAMMXXAMA",
-    #           "SMSMSASXSS",
-    #           "SAXAMASAAA",
-    #           "MAMMMXMMMM",
-    #           "MXMXAXMASX"]
-
     ROW = len(MATRIX)
     COL = len(MATRIX[0])
-    
-    print(ROW, COL)
 
     def dfs(r, c, i, direction):
         if i == len(WORD):
@@ -80,22 +67,9 @@ def main():
         MATRIX.append("."+line.rstrip()+".")
     MATRIX.append("."+"."*len(lines[0]))
 
-    # MATRIX = [".M.S......",
-    #           "..A..MSMS.",
-    #           ".M.S.MAA..",
-    #           "..A.ASMSM.",
-    #           ".M.S.M....",
-    #           "..........",
-    #           "S.S.S.S.S.",
-    #           ".A.A.A.A..",
-    #           "M.M.M.M.M.",
-    #           "..........",]
-    
     sum = 0
     ROW = len(MATRIX)
     COL = len(MATRIX[0])
-
-    print(ROW, COL)
 
     for i in range(1, ROW-1):
         for j in range(1, COL-1):
