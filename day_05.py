@@ -95,10 +95,7 @@ def main():
                     pages[pointer_2] = page
                     pages[pointer_1] = temp_val
                     
-                    temp_p = pointer_2
-                    pointer_2 = pointer_1
-                    pointer_1 = temp_p
-
+                    # reset everything here
                     pointer_1 = len(pages) - 1
                     pointer_2 = pointer_1 - 1
                     is_correct = False
