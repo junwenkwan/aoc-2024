@@ -11,7 +11,6 @@ def find_guard_pos(grid):
                 return r, c, ">"
             if grid[r][c] == "v":
                 return r, c, "v"
-    return -1, -1, "X"
 
 def start(x, y, dir, grid, NUM_ROW, NUM_COL):
     tiles = set()
@@ -23,13 +22,13 @@ def start(x, y, dir, grid, NUM_ROW, NUM_COL):
         tiles_dir.add((x,y,dir))
 
         if dir == "^":
-            x = x - 1
+            x -= 1
         elif dir == ">":
-            y = y + 1
+            y += 1
         elif dir == "v":
-            x = x + 1             
+            x += 1
         elif dir == "<":
-            y = y - 1
+            y -= 1
 
         if x < 0 or y < 0 or x >= NUM_ROW or y >= NUM_COL:
             break
@@ -40,16 +39,16 @@ def start(x, y, dir, grid, NUM_ROW, NUM_COL):
         
         if grid[x][y] == "#":
             if dir == "^":
-                x = x + 1
+                x += 1
                 dir = ">"
             elif dir == ">":
-                y = y - 1 
+                y -= 1
                 dir = "v"
             elif dir == "v":
-                x = x - 1
-                dir = "<" 
+                x -= 1
+                dir = "<"
             elif dir == "<":
-                y = y + 1
+                y += 1
                 dir = "^"
 
     return tiles, is_loop
