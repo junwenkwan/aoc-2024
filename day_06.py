@@ -81,16 +81,16 @@ def main():
         lines = f.readlines()
     grid = [list(row.rstrip()) for row in lines]
 
-    # grid = ["....#.....",
-    #         ".........#",
-    #         "..........",
-    #         "..#.......",
-    #         ".......#..",
-    #         "..........",
-    #         ".#..^.....",
-    #         "........#.",
-    #         "#.........",
-    #         "......#..."]
+    grid = ["....#.....",
+            ".........#",
+            "..........",
+            "..#.......",
+            ".......#..",
+            "..........",
+            ".#..^.....",
+            "........#.",
+            "#.........",
+            "......#..."]
     
     grid = [list(row) for row in grid]
 
@@ -106,25 +106,25 @@ def main():
     print(len(guard_possible_pos))
 
     # part 2
-    # place_obstacles = guard_possible_pos.copy()
-    # sum_loop = 0
-    # obstacles = set()
-    # replace = False
-    # for r_o, c_o in tqdm(place_obstacles):
-    #     if r_o == 73 and c_o ==41:
-    #         continue
+    place_obstacles = guard_possible_pos.copy()
+    sum_loop = 0
+    obstacles = set()
+    replace = False
+    for r_o, c_o in tqdm(place_obstacles):
+        if r_o == x_init + 1 and c_o == y_init + 1:
+            continue
 
-    #     if grid[r_o][c_o] == ".":
-    #         grid[r_o][c_o] = "#"
-    #         replace = True
-    #     else:
-    #         continue
-    #     is_loop = start(x, y, dir, grid, NUM_ROW, NUM_COL, set(), set())
-    #     if replace:
-    #         grid[r_o][c_o] = "."
-    #         replace = False
-    #     if is_loop:
-    #         sum_loop += 1
+        if grid[r_o][c_o] == ".":
+            grid[r_o][c_o] = "#"
+            replace = True
+        else:
+            continue
+        is_loop = start(x, y, dir, grid, NUM_ROW, NUM_COL, set(), set())
+        if replace:
+            grid[r_o][c_o] = "."
+            replace = False
+        if is_loop:
+            sum_loop += 1
 
     # for r_o in tqdm.tqdm(range(NUM_ROW)):
     #     for c_o in range(NUM_COL):
